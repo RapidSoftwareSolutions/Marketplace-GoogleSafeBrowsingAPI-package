@@ -1,0 +1,188 @@
+{
+  "package": "GoogleSafeBrowsingAPI",
+  "tagline": "Google Safe Browsing API Wrapper",
+  "description": "Get up-to-date weather information for any location, including 5-day forecast, wind, atmosphere, astronomy conditions, and more.",
+  "image": "http://logo.clearbit.com/google.com",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-GoogleSafeBrowsingAPI-package",
+  "accounts": {
+        "domain": "google.com",
+        "credentials": [
+            "apiKey"
+        ]
+    },
+  "blocks": [
+    {
+      "name": "checkUrlsSafety",
+      "description": "This endpoint allows to check if URLs are included on any of the Safe Browsing lists. If a URL is found on one or more lists, the matching information is returned.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Google."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Required: A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API."
+        }, {
+          "name": "clientVersion",
+          "type": "String",
+          "info": "Required: The version of the client implementation."
+        }, {
+          "name": "threatTypes",
+          "type": "JSON",
+          "info": "Required: Json array of the threats. See README for more details."
+        }, {
+          "name": "platformTypes",
+          "type": "JSON",
+          "info": "Required: Json array of the platforms types. See README for more details."
+        }, {
+          "name": "threatEntryTypes",
+          "type": "JSON",
+          "info": "Required: Json array of the threat entries types. See README for more details."
+        }, {
+          "name": "threatEntries",
+          "type": "JSON",
+          "info": "Required: Json array of objects. The threats entries. See README for more details."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getThreatLists",
+      "description": "This endpoint allows to retrieve the names of the Safe Browsing lists",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Google."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getThreatListUpdates",
+      "description": "This endpoint allows to update the Safe Browsing lists in the local database",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Google."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Required: A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API."
+        }, {
+          "name": "clientVersion",
+          "type": "String",
+          "info": "Required: The version of the client implementation."
+        }, {
+          "name": "threatType",
+          "type": "String",
+          "info": "Required: The type of the threat."
+        }, {
+          "name": "platformType",
+          "type": "String",
+          "info": "Required: The type of the platform."
+        }, {
+          "name": "threatEntryType",
+          "type": "String",
+          "info": "Required: The type of the threat entry."
+        }, {
+          "name": "state",
+          "type": "String",
+          "info": "Required: The current state of the client for the requested list (the encrypted client state that was received from the last successful list update)."
+        }, {
+          "name": "maxUpdateEntries",
+          "type": "String",
+          "info": "Required: The maximum size in number of entries. The update will not contain more entries than this value. This should be a power of 2 between 2**10 and 2**20. If zero, no update size limit is set."
+        }, {
+          "name": "maxDatabaseEntries",
+          "type": "String",
+          "info": "Required: Sets the maximum number of entries that the client is willing to have in the local database. This should be a power of 2 between 2**10 and 2**20. If zero, no database size limit is set."
+        }, {
+          "name": "region",
+          "type": "String",
+          "info": "Required: Requests the list for a specific geographic location. If not set the server may pick that value based on the user's IP address. Expects ISO 3166-1 alpha-2 format."
+        }, {
+          "name": "supportedCompressions",
+          "type": "JSON",
+          "info": "Required: Json array. The compression types supported by the client. See README for more details"
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "checkSafetyByHashs",
+      "description": "This endpoint allows to check if a URL is on a Safe Browsing list, the client must first compute the hash and hash prefix of the URL",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Google."
+        }, {
+          "name": "clientId",
+          "type": "String",
+          "info": "Required: A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API."
+        }, {
+          "name": "clientVersion",
+          "type": "String",
+          "info": "Required: The version of the client implementation."
+        }, {
+          "name": "clientStates",
+          "type": "JSON",
+          "info": "Required: Json array. The current client states for each of the client's local threat lists. See README for more details."
+        }, {
+          "name": "threatTypes",
+          "type": "JSON",
+          "info": "Required: Json array. The threat types to be checked. See README for more details."
+        }, {
+          "name": "platformTypes",
+          "type": "JSON",
+          "info": "Required: Json array. The platform types to be checked. See README for more details."
+        }, {
+          "name": "threatEntryTypes",
+          "type": "JSON",
+          "info": "Required: Json array. The entry types to be checked. See README for more details."
+        }, {
+          "name": "threatEntries",
+          "type": "JSON",
+          "info": "Required: Json array of objects. The threat entries to be checked. See README for more details."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
