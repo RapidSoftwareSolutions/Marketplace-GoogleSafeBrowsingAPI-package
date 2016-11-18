@@ -1,5 +1,5 @@
 # GoogleSafeBrowsingAPI Package
-Get up-to-date weather information for any location, including 5-day forecast, wind, atmosphere, astronomy conditions, and more.
+The Safe Browsing APIs (v4) let your client applications check URLs against Google's constantly updated lists of unsafe web resources. Examples of unsafe web resources are social engineering sites (phishing and deceptive sites) and sites that host malware or unwanted software. Any URL found on a Safe Browsing list is considered unsafe.
 * Domain: google.com
 * Credentials: apiKey
 
