@@ -81,9 +81,9 @@ $app->post('/api/GoogleSafeBrowsingAPI/checkUrlsSafety', function ($request, $re
         if(in_array($resp->getStatusCode(), ['200', '201', '202', '203', '204'])) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
-            if(empty($result['contextWrites']['to'])) {
+            if(empty($result['contextWrites']['to']) || empty(json_decode($responseBody, true))) {
                 $result['contextWrites']['to'] = "empty list";
-            }
+            }            
         } else {
             $result['callback'] = 'error';
             $result['contextWrites']['to']['status_code'] = 'API_ERROR';
