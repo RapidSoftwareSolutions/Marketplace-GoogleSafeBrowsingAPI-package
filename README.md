@@ -10,13 +10,7 @@ The Safe Browsing APIs (v4) let your client applications check URLs against Goog
 3. In the sidebar on the left, select **Credentials**.
 4. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**;
 
-## TOC: 
-* [checkUrlsSafety](#checkUrlsSafety)
-* [getThreatLists](#getThreatLists)
-* [getThreatListUpdates](#getThreatListUpdates)
-* [checkSafetyByHashs](#checkSafetyByHashs)
  
-<a name="checkUrlsSafety"/>
 ## GoogleSafeBrowsingAPI.checkUrlsSafety
 This endpoint allows to check if URLs are included on any of the Safe Browsing lists. If a URL is found on one or more lists, the matching information is returned.
 
@@ -50,7 +44,6 @@ This endpoint allows to check if URLs are included on any of the Safe Browsing l
 ]
 ```
 
-<a name="getThreatLists"/>
 ## GoogleSafeBrowsingAPI.getThreatLists
 This endpoint allows to retrieve the names of the Safe Browsing lists
 
@@ -58,7 +51,6 @@ This endpoint allows to retrieve the names of the Safe Browsing lists
 |-------|------------|----------
 | apiKey| credentials| Required: API key obtained from Google.
 
-<a name="getThreatListUpdates"/>
 ## GoogleSafeBrowsingAPI.getThreatListUpdates
 This endpoint allows to update the Safe Browsing lists in the local database
 
@@ -80,7 +72,6 @@ This endpoint allows to update the Safe Browsing lists in the local database
 ["RAW"]
 ```
 
-<a name="checkSafetyByHashs"/>
 ## GoogleSafeBrowsingAPI.checkSafetyByHashs
 This endpoint allows to check if a URL is on a Safe Browsing list, the client must first compute the hash and hash prefix of the URL
 
