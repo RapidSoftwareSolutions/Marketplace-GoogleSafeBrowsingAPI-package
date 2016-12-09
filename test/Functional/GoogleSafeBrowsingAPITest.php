@@ -4,7 +4,7 @@ namespace Test\Functional;
 
 class GoogleSafeBrowsingAPITest extends BaseTestCase {
     
-    public function testCheckUrlSafety() {
+    public function testCheckSingleUrlSafety() {
         
         $var = '{  
                     "args":{  
@@ -18,7 +18,7 @@ class GoogleSafeBrowsingAPITest extends BaseTestCase {
                 }';
         $post_data = json_decode($var, true);
 
-        $response = $this->runApp('POST', '/api/GoogleSafeBrowsingAPI/checkUrlSafety', $post_data);
+        $response = $this->runApp('POST', '/api/GoogleSafeBrowsingAPI/checkSingleUrlSafety', $post_data);
         
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertNotEmpty($response->getBody());

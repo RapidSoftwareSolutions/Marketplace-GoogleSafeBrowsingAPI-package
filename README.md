@@ -11,7 +11,7 @@ Identify unsafe websites and notifies users.
 4. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**;
 
  
-## GoogleSafeBrowsingAPI.checkUrlSafety
+## GoogleSafeBrowsingAPI.checkSingleUrlSafety
 This endpoint allows to check if URL are included on any of the Safe Browsing lists. If a URL is found on one or more lists, the matching information is returned.
 
 | Field           | Type       | Description

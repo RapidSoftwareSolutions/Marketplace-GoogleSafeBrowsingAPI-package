@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/api/GoogleSafeBrowsingAPI/checkUrlSafety', function ($request, $response, $args) {
+$app->post('/api/GoogleSafeBrowsingAPI/checkSingleUrlSafety', function ($request, $response, $args) {
     $settings =  $this->settings;
     
     $data = $request->getBody();

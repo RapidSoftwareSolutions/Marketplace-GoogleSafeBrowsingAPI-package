@@ -1,6 +1,6 @@
 <?php
 $routes = [
-    'checkUrlSafety',
+    'checkSingleUrlSafety',
     'checkUrlsSafety',
     'getThreatLists',
     'getThreatListUpdates',
