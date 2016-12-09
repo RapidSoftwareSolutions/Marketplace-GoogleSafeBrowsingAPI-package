@@ -1,5 +1,5 @@
 # GoogleSafeBrowsingAPI Package
-The Safe Browsing APIs (v4) let your client applications check URLs against Google's constantly updated lists of unsafe web resources. Examples of unsafe web resources are social engineering sites (phishing and deceptive sites) and sites that host malware or unwanted software. Any URL found on a Safe Browsing list is considered unsafe.
+Identify unsafe websites and notifies users.
 * Domain: google.com
 * Credentials: apiKey
 
@@ -11,6 +11,26 @@ The Safe Browsing APIs (v4) let your client applications check URLs against Goog
 4. If your project has no API key for the server, create it now - **Add credentials > API key > Server key**;
 
  
+## GoogleSafeBrowsingAPI.checkUrlSafety
+This endpoint allows to check if URL are included on any of the Safe Browsing lists. If a URL is found on one or more lists, the matching information is returned.
+
+| Field           | Type       | Description
+|-----------------|------------|----------
+| apiKey          | credentials| Required: API key obtained from Google.
+| clientId        | String     | Required: A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API.
+| clientVersion   | String     | Required: The version of the client implementation.
+| threatTypes     | JSON       | Required: Json array of the threats.
+| platformTypes   | JSON       | Required: Json array of the platforms types.
+| threatEntry     | String     | Required: The URL to be checked.
+### threatTypes format 
+```json
+["MALWARE", "SOCIAL_ENGINEERING"]
+```
+### platformTypes format 
+```json
+["WINDOWS"]
+```
+
 ## GoogleSafeBrowsingAPI.checkUrlsSafety
 This endpoint allows to check if URLs are included on any of the Safe Browsing lists. If a URL is found on one or more lists, the matching information is returned.
 
@@ -19,8 +39,8 @@ This endpoint allows to check if URLs are included on any of the Safe Browsing l
 | apiKey          | credentials| Required: API key obtained from Google.
 | clientId        | String     | Required: A client ID that (hopefully) uniquely identifies the client implementation of the Safe Browsing API.
 | clientVersion   | String     | Required: The version of the client implementation.
-| threatTypes     | JSON       | Required: Json array of the threats..
-| platformTypes   | JSON       | Required: Json array of the platforms types..
+| threatTypes     | JSON       | Required: Json array of the threats.
+| platformTypes   | JSON       | Required: Json array of the platforms types.
 | threatEntryTypes| JSON       | Required: Json array of the threat entries types.
 | threatEntries   | JSON       | Required: Json array of objects. The threats entries.
 ### threatTypes format 

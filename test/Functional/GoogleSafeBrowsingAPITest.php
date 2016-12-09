@@ -4,6 +4,27 @@ namespace Test\Functional;
 
 class GoogleSafeBrowsingAPITest extends BaseTestCase {
     
+    public function testCheckUrlSafety() {
+        
+        $var = '{  
+                    "args":{  
+                        "apiKey":"AIzaSyC4ceX-7CeLUrGJHSXBqoNwFy0LW8IHaBw",
+                        "clientId":"TestCompany",
+                        "clientVersion":"1",
+                        "threatTypes":["MALWARE", "SOCIAL_ENGINEERING"],
+                        "platformTypes":["WINDOWS"],
+                        "threatEntry": "www.google.com"
+                    }
+                }';
+        $post_data = json_decode($var, true);
+
+        $response = $this->runApp('POST', '/api/GoogleSafeBrowsingAPI/checkUrlSafety', $post_data);
+        
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertNotEmpty($response->getBody());
+        $this->assertEquals('success', json_decode($response->getBody())->callback);
+    }
+    
     public function testCheckUrlsSafety() {
         
         $var = '{  
