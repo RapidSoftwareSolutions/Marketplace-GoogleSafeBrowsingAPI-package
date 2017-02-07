@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/GoogleSafeBrowsingAPI/functions?utm_source=RapidAPIGitHub_GoogleSafeBrowseFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # GoogleSafeBrowsingAPI Package
 Identify unsafe websites and notifies users.
 * Domain: google.com
