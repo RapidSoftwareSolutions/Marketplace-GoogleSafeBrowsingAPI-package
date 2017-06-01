@@ -61,11 +61,11 @@ $app->post('/api/GoogleSafeBrowsingAPI/checkSingleUrlSafety', function ($request
     
     $body['client']['clientId'] = $post_data['args']['clientId'];
     $body['client']['clientVersion'] = $post_data['args']['clientVersion'];
-    $body['threatInfo']['threatTypes'] = implode(",",$post_data['args']['threatTypes']);
-    $body['threatInfo']['platformTypes'] = implode(",",$post_data['args']['platformTypes']);
+    $body['threatInfo']['threatTypes'] = $post_data['args']['threatTypes'];
+    $body['threatInfo']['platformTypes'] = $post_data['args']['platformTypes'];
     $body['threatInfo']['threatEntryTypes'] = ["URL"];
     $body['threatInfo']['threatEntries'][] = ["url" => $post_data['args']['threatEntry']];
-    
+
     try {
 
          $resp = $client->post( $query_str, 
