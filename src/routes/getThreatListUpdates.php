@@ -83,7 +83,7 @@ $app->post('/api/GoogleSafeBrowsingAPI/getThreatListUpdates', function ($request
     $body['listUpdateRequests']['constraints']['maxUpdateEntries'] = $post_data['args']['maxUpdateEntries'];
     $body['listUpdateRequests']['constraints']['maxDatabaseEntries'] = $post_data['args']['maxDatabaseEntries'];
     $body['listUpdateRequests']['constraints']['region'] = $post_data['args']['region'];
-    $body['listUpdateRequests']['constraints']['supportedCompressions'] = $post_data['args']['supportedCompressions'];
+    $body['listUpdateRequests']['constraints']['supportedCompressions'] = implode(",",$post_data['args']['supportedCompressions']);
     
     try {
 

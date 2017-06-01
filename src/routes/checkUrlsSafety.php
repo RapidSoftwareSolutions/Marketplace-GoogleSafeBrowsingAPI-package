@@ -64,9 +64,9 @@ $app->post('/api/GoogleSafeBrowsingAPI/checkUrlsSafety', function ($request, $re
     
     $body['client']['clientId'] = $post_data['args']['clientId'];
     $body['client']['clientVersion'] = $post_data['args']['clientVersion'];
-    $body['threatInfo']['threatTypes'] = $post_data['args']['threatTypes'];
-    $body['threatInfo']['platformTypes'] = $post_data['args']['platformTypes'];
-    $body['threatInfo']['threatEntryTypes'] = $post_data['args']['threatEntryTypes'];
+    $body['threatInfo']['threatTypes'] = implode(",",$post_data['args']['threatTypes']);
+    $body['threatInfo']['platformTypes'] = implode(",",$post_data['args']['platformTypes']);
+    $body['threatInfo']['threatEntryTypes'] = implode(",",$post_data['args']['threatEntryTypes']);
     $body['threatInfo']['threatEntries'] = $post_data['args']['threatEntries'];
     
     try {

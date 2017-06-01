@@ -29,14 +29,24 @@
                     "required": true
                 }, {
                     "name": "threatTypes",
-                    "type": "JSON",
-                    "info": "Json array of the threats. See README for more details.",
-                    "required": true
+                    "type": "List",
+                    "info": "List of the threats. See README for more details.",
+                    "required": true,
+                    "structure": {
+                        "name": "threat",
+                        "type": "String",
+                        "info": "threat type"
+                    }
                 }, {
                     "name": "platformTypes",
-                    "type": "JSON",
-                    "info": "Json array of the platforms types. See README for more details.",
-                    "required": true
+                    "type": "List",
+                    "info": "List of the platforms types. See README for more details.",
+                    "required": true,
+                    "structure": {
+                        "name": "platform",
+                        "type": "String",
+                        "info": "platform type"
+                    }
                 }, {
                     "name": "threatEntry",
                     "type": "String",
@@ -69,20 +79,35 @@
                     "info": "The version of the client implementation.",
                     "required": true
                 }, {
-                    "name": "threatTypes",
-                    "type": "JSON",
-                    "info": "Json array of the threats. See README for more details.",
-                    "required": true
-                }, {
-                    "name": "platformTypes",
-                    "type": "JSON",
-                    "info": "Json array of the platforms types. See README for more details.",
-                    "required": true
-                }, {
+                "name": "threatTypes",
+                "type": "List",
+                "info": "List of the threats. See README for more details.",
+                "required": true,
+                "structure": {
+                    "name": "threat",
+                    "type": "String",
+                    "info": "threat type"
+                }
+            }, {
+                "name": "platformTypes",
+                "type": "List",
+                "info": "List of the platforms types. See README for more details.",
+                "required": true,
+                "structure": {
+                    "name": "platform",
+                    "type": "String",
+                    "info": "platform type"
+                }
+            }, {
                     "name": "threatEntryTypes",
-                    "type": "JSON",
+                    "type": "List",
                     "info": "Json array of the threat entries types. See README for more details.",
-                    "required": true
+                    "required": true,
+                    "structure":{
+                        "name": "threatEntry",
+                        "type": "String",
+                        "info": "threat entry type"
+                    }
                 }, {
                     "name": "threatEntries",
                     "type": "JSON",
@@ -167,9 +192,14 @@
                     "required": true
                 }, {
                     "name": "supportedCompressions",
-                    "type": "JSON",
+                    "type": "List",
                     "info": "Json array. The compression types supported by the client. See README for more details",
-                    "required": true
+                    "required": true,
+                    "structure": {
+                        "name": "compressions",
+                        "type": "String",
+                        "info": "The compression type supported by the client"
+                    }
                 }],
             "callbacks": [{
                     "name": "error",
@@ -198,25 +228,45 @@
                     "required": true
                 }, {
                     "name": "clientStates",
-                    "type": "JSON",
+                    "type": "List",
                     "info": "Json array. The current client states for each of the client's local threat lists. See README for more details.",
-                    "required": true
+                    "required": true,
+                    "structure": {
+                        "name": "states",
+                        "type": "String",
+                        "info": "The current client state"
+                    }
                 }, {
-                    "name": "threatTypes",
-                    "type": "JSON",
-                    "info": "Json array. The threat types to be checked. See README for more details.",
-                    "required": true
-                }, {
-                    "name": "platformTypes",
-                    "type": "JSON",
-                    "info": "Json array. The platform types to be checked. See README for more details.",
-                    "required": true
-                }, {
-                    "name": "threatEntryTypes",
-                    "type": "JSON",
-                    "info": "Json array. The entry types to be checked. See README for more details.",
-                    "required": true
-                }, {
+                "name": "threatTypes",
+                "type": "List",
+                "info": "List of the threats. See README for more details.",
+                "required": true,
+                "structure": {
+                    "name": "threat",
+                    "type": "String",
+                    "info": "threat type"
+                }
+            }, {
+                "name": "platformTypes",
+                "type": "List",
+                "info": "List of the platforms types. See README for more details.",
+                "required": true,
+                "structure": {
+                    "name": "platform",
+                    "type": "String",
+                    "info": "platform type"
+                }
+            }, {
+                "name": "threatEntryTypes",
+                "type": "List",
+                "info": "Json array of the threat entries types. See README for more details.",
+                "required": true,
+                "structure":{
+                    "name": "threatEntry",
+                    "type": "String",
+                    "info": "threat entry type"
+                }
+            }, {
                     "name": "threatEntries",
                     "type": "JSON",
                     "info": "Json array of objects. The threat entries to be checked. See README for more details.",
