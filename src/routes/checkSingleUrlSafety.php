@@ -60,7 +60,7 @@ $app->post('/api/GoogleSafeBrowsingAPI/checkSingleUrlSafety', function ($request
     $headers['Content-Type'] = 'application/json';
     
     $body['client']['clientId'] = $post_data['args']['clientId'];
-    $body['client']['clientVersion'] = $post_data['args']['clientVersion'];
+    $body['client']['clientVersion'] = (string)$post_data['args']['clientVersion'];
     $body['threatInfo']['threatTypes'] = $post_data['args']['threatTypes'];
     $body['threatInfo']['platformTypes'] = $post_data['args']['platformTypes'];
     $body['threatInfo']['threatEntryTypes'] = ["URL"];
